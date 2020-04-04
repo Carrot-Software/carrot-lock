@@ -1,0 +1,8 @@
+carrot:
+  lock:
+    redis:
+      namespace: carrot-test
+      timeout-millis: 5000
+spring:
+  redis:
+    password: daijian

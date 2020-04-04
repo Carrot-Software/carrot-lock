@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>cn.qiyubing</groupId>
-    <artifactId>carrot</artifactId>
+    <groupId>com.carrot-software</groupId>
+    <artifactId>carrot-lock</artifactId>
     <version>1.0</version>
 
     <description>A graceful distributed lock</description>
@@ -13,7 +13,7 @@
     <developers>
         <developer>
             <name>qiyubing</name>
-            <email>qiyubing@aliyun.com</email>
+            <email>yubing-qi@outlook.com</email>
         </developer>
     </developers>
 
@@ -27,9 +27,37 @@
     </properties>
 
     <modules>
-        <module>carrot-common</module>
-        <module>carrot-redis-spring-boot-stater</module>
+        <module>carrot-lock-common</module>
+        <module>carrot-lock-redis-spring-boot-stater</module>
     </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.7</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.1.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.6</version>
+            </plugin>
+        </plugins>
+    </build>
 
     <dependencyManagement>
         <dependencies>
@@ -42,4 +70,12 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <distributionManagement>
+		<repository>
+     		<id>github</id>
+     		<name>GitHub OWNER Apache Maven Packages</name>
+     		<url>https://maven.pkg.github.com/Carrot-Software/carrot-lock</url>
+   		</repository>
+	</distributionManagement>
 </project>
