@@ -142,8 +142,8 @@ public interface KeyBuilder {
 
 | 配置项                      | 作用                          |
 | --------------------------- | ----------------------------- |
-| carrot.redis.namespace      | Redis命名空间                 |
-| carrot.redis.timeout-millis | Redis锁自动过期时间，单位毫秒 |
+| carrot.lock.redis.namespace      | Redis命名空间                 |
+| carrot.lock.redis.timeout-millis | Redis锁自动过期时间，单位毫秒 |
 | spring.redis.*              | Redis连接配置                 |
 
 ## 扩展点
